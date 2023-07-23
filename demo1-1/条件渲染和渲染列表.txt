@@ -1,0 +1,41 @@
+1.条件渲染
+    1.1 使用 if 语句根据条件引入 JSX:
+
+        let content;
+        if (isLoggedIn) {
+            content = <AdminPanel />;
+        } else {
+            content = <LoginForm />;
+        }
+        return (
+            <div>
+                {content}
+            </div>
+        );
+
+    1.2 使用三木运算符 条件 ? 运算符，与 if 不同的是，它工作于 JSX 内部
+        <div>
+            {isLoggedIn ? (
+            <AdminPanel />
+            ) : (
+            <LoginForm />
+            )}
+        </div>
+
+    1.3 当不需要 else 分支时，你还可以使用 逻辑 && 语法:
+        <div>
+            {isLoggedIn && <AdminPanel />}
+        </div>
+
+2.列表渲染          --见demo
+    const products = [
+        { title: 'Cabbage', isFruit: false, id: 1 },
+        { title: 'Garlic', isFruit: false, id: 2 },
+        { title: 'Apple', isFruit: true, id: 3 },
+    ];
+
+    const listItems = products.map(product => 
+        <li key = {product.id}>
+        {product.title}
+        </li>
+    );

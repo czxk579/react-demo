@@ -1,0 +1,19 @@
+1.如何创建和嵌套组件
+
+2.如何添加标签和样式
+    HTML 与 JSX 在线转换: https://transform.tools/html-to-jsx
+    一个组件只能返回一个 JSX, 多个 html 必须包裹到一个共享的父级中, 比如 <div>...</div> 或使用空的 <>...</> 包裹
+    function AboutPage() {
+        return (
+            <>
+            <h1>About</h1>
+            <p>Hello there.<br />How do you do?</p>
+            </>
+        );
+    }
+
+3.如何显示数据
+
+4.如何条件渲染和渲染列表
+5.如何对事件做出响应并更新界面
+6.如何在组件间共享数据
